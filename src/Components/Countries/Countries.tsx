@@ -1,6 +1,6 @@
 import { use } from "react";
-import type CountryType from "../type";
-import Country from "../Country/Country";
+import type CountryType from "../../type";
+import Country from "../../Country/Country";
 
 
 export interface CountriesProps {
