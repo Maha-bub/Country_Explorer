@@ -1,5 +1,6 @@
 import { use } from "react";
 import type CountryType from "../type";
+import Country from "../Country/Country";
 
 
 export interface CountriesProps {
@@ -13,6 +14,12 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     return (
         <>
             <p>Countries:</p>
+            <ul>
+                {
+                    country.map((country) => <Country country={country} ></Country>
+                    )
+                }
+            </ul>
         </>
     )
 } 
