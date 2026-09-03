@@ -8,7 +8,10 @@ export default function Country({ country }: CountryProps) {
     
     return (
         <>
-        <h3 className="country">{country.name.common}</h3>
+        <div className="country">
+        <h3>Country Name:{country.name.common}</h3>
+        <img src={country.flags.flags.png} alt={country.flags.flags.alt} />
+        </div>
         </>
     )
 }

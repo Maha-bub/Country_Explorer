@@ -14,14 +14,16 @@ export default function Countries({ countriesPromise }: CountriesProps) {
 
     return (
         <>
-            <p>Countries:</p>
-            <div className="countries">
+            <div>
+                <p>Countries:</p>
+                <div className="countries">
 
-                {
-                    country.map((country) => <Country country={country} ></Country>
-                    )
-                }
+                    {
+                        country.map((country) => <Country country={country} ></Country>
+                        )
+                    }
 
+                </div>
             </div>
         </>
     )
