@@ -15,11 +15,11 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     return (
         <>
             <div>
-                <p>Countries:</p>
+                <p>Countries:{country.length}</p>
                 <div className="countries">
 
                     {
-                        country.map((country,idx) => <Country key={idx} country={country} ></Country>
+                        country.map((country, idx) => <Country key={idx} country={country} ></Country>
                         )
                     }
 
