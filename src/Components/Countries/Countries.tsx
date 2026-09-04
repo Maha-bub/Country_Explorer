@@ -1,6 +1,7 @@
 import { use } from "react";
 import type CountryType from "../../type";
 import Country from "../../Country/Country";
+import './Countries.css'
 
 
 export interface CountriesProps {
@@ -14,12 +15,14 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     return (
         <>
             <p>Countries:</p>
-            <ul>
+            <div className="countries">
+
                 {
                     country.map((country) => <Country country={country} ></Country>
                     )
                 }
-            </ul>
+
+            </div>
         </>
     )
 } 
