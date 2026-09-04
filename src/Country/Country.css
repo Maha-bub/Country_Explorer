@@ -3,4 +3,11 @@
     margin: 20px;
     padding: 15px;
     border-radius: 15px;
+    background-color: aquamarine;
+}
+
+.country img{
+    width: 250px;
+    height: 150px;
+    padding: 15px;
 }
