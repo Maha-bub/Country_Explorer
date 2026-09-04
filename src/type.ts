@@ -17,5 +17,8 @@ export default interface CountryType {
     },
     population: {
         population: number
+    },
+    capital:{
+        capital:string[]
     }
 }
