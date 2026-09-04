@@ -14,5 +14,8 @@ export default interface CountryType {
             svg: string,
             alt: string
         }
+    },
+    population: {
+        population: number
     }
 }
