@@ -12,7 +12,9 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     const country = use(countriesPromise);
     console.log(country);
     const [visitedCountry, setVisitedCountry] = useState<CountryType[]>([]);
+
     const handleVisitedConutry = (country: CountryType): void => {
+
         const newVisitedCountry = [...visitedCountry, country];
         setVisitedCountry(newVisitedCountry);
 
@@ -20,15 +22,21 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     }
 
     const [visitedcountryfalgs, setvisitedcountryflags] = useState<string[]>([]);
-    const handlerCountryFlags = (flags: string) => {
-        const newFlags = [...visitedcountryfalgs, flags];
-        setvisitedcountryflags(newFlags);
+    const handlerCountryFlags = (flags: string): void => {
+
+        if (visitedcountryfalgs.includes(flags)) {
+            return;
+        } else {
+            const newFlags = [...visitedcountryfalgs, flags];
+            setvisitedcountryflags(newFlags);
+        }
     }
     return (
         <>
             <div>
                 <p>Countries:{country.length}</p>
                 <h3>Visited Countries:{visitedCountry.length}</h3>
+                <h4>Visited Flags:{visitedcountryfalgs.length}</h4>
                 <div className="countries">
 
                     {

@@ -12,7 +12,7 @@ export default function Country({ country, handleVisitedConutry, handlerCountryF
     const handleVisitedCountry = () => {
         setVisited(!visited);
         handleVisitedConutry(country);
-        
+
     }
 
     return (
@@ -23,7 +23,7 @@ export default function Country({ country, handleVisitedConutry, handlerCountryF
                 <p>Population:{country.population.population}</p>
                 <p>Capital:{country.capital.capital}</p>
                 <button onClick={handleVisitedCountry}>{visited ? 'Visited' : 'Mark as visited'}</button>
-                <button onClick={handlerCountryFlags}>Visited country flags</button>
+                <button onClick={() => handlerCountryFlags(country.flags.flags.png)}>Visited country flags</button>
             </div>
         </>
     )
