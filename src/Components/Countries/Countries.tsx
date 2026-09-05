@@ -14,9 +14,15 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     const [visitedCountry, setVisitedCountry] = useState<CountryType[]>([]);
 
     const handleVisitedConutry = (country: CountryType): void => {
+        const exist = visitedCountry.find(c => c.ccn3.ccn3 === country.ccn3.ccn3)
+        if (exist) {
+            const remainingCountries = visitedCountry.filter(c => c.ccn3.ccn3 !== country.ccn3.ccn3);
+            setVisitedCountry(remainingCountries);
+        } else {
 
-        const newVisitedCountry = [...visitedCountry, country];
-        setVisitedCountry(newVisitedCountry);
+            const newVisitedCountry = [...visitedCountry, country];
+            setVisitedCountry(newVisitedCountry);
+        }
 
 
     }
@@ -38,6 +44,11 @@ export default function Countries({ countriesPromise }: CountriesProps) {
                 <p>Countries:{country.length}</p>
                 <h3>Visited Countries:{visitedCountry.length}</h3>
                 <h4>Visited Flags:{visitedcountryfalgs.length}</h4>
+                <div className="visited-country">
+                    <ul>
+                        {visitedCountry.map(country => <li>{country.name.common}</li>)}
+                    </ul>
+                </div>
                 <div className="countries">
 
                     {
