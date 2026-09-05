@@ -25,7 +25,8 @@ export default function Countries({ countriesPromise }: CountriesProps) {
     const handlerCountryFlags = (flags: string): void => {
 
         if (visitedcountryfalgs.includes(flags)) {
-            return;
+            const remainingFlags = visitedcountryfalgs.filter(f => f !== flags);
+            setvisitedcountryflags(remainingFlags)
         } else {
             const newFlags = [...visitedcountryfalgs, flags];
             setvisitedcountryflags(newFlags);
