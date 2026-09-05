@@ -2,18 +2,20 @@ import { useState } from "react"
 import type CountryType from "../type"
 import './Country.css'
 export interface CountryProps {
-    country: CountryType
+    country: CountryType,
+    handleVisitedConutry: (country: CountryType) => void;
 }
 
-export default function Country({ country }: CountryProps) {
+export default function Country({ country, handleVisitedConutry }: CountryProps) {
     const [visited, setVisited] = useState<boolean>(true);
     const handleVisitedCountry = () => {
         setVisited(!visited);
+        handleVisitedConutry(country);
     }
 
     return (
         <>
-            <div className={`${visited?'visitedCountry':'country'}`}>
+            <div className={`${visited ? 'visitedCountry' : 'country'}`}>
                 <h3>Country Name:{country.name.common}</h3>
                 <img src={country.flags.flags.png} alt={country.flags.flags.alt} />
                 <p>Population:{country.population.population}</p>
